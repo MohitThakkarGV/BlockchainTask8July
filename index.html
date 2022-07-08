@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <style type="text/css">
+        .button{
+            background: url('./meta.png') no-repeat;
+            cursor:pointer;
+            border: none;
+            width: fit-content;
+            height: fit-content;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Transaction</title>
+</head>
+<body>
+    
+
+
+    <div class="split left">
+    
+        
+        <center> <p id="wallet" style="color:black; font-weight: bold; text-decoration: underline;"></p>
+            <p id="status" style="color:black; font-weight: bold;" > </p>
+        </center>   
+        <form method="post">
+            <select class="networkoption" required="required" id="network" text-align="center";>
+                <option disabled selected>Select your network</option>
+                <option value="1" >Mainnet</option>
+                <option value="4" >Rinkeby</option>
+                <option value="3" >Ropsten</option>
+                <option value="5" >Goereli</option>
+                <option value="42" >Kovan</option>
+                <option value="97" >Binance Testnet</option>
+              </select>
+              <input type="button" style="display: none;" value="Click to Switch Network" class="connect" id="switchnetwork" onclick="switchNetwork()"/>
+        
+            <input type="button" value="Connect Metamask"  class="connect button" id="ethconnect"  onclick="myETHFunction()" />
+            <input name="address" value="" style="display: none;" id="address" type="text" class="feedback-input" placeholder="Address" required />   
+            <input name="ETH" value="" style="display: none;" id="ethvalue" type="number" class="feedback-input" placeholder="ETH" required/>   
+    
+            <input type="button" value="Send" style="display: none;" class="submitbtn" id="submitbtn" onclick="sendFunction()"/>
+            <input type="button" style="display: none;" value="Get Balance" class="balance" id="ethbalance" onclick="getMetaBalance()"/>
+        </form>
+        <p align="center" id="ethtxn" style="color:black; font-weight: bold; text-decoration: underline;" ></p>
+        
+        <div id="ethhashbtn">
+        <input style="display: none;" type="button" id="ethtx" value="" onclick="copyToClipboardForETH()" readonly="readonly"  >
+       </div>
+        
+
+
+   
+     
+            <input name="address" value=""  id="address" type="text" class="feedback-input" placeholder="Address for custom token" required />   
+            <input name="ETH" value=""  id="tokenvalue" type="number" class="feedback-input" placeholder="USDT" required/> 
+            <input type="button" value="Send"  class="submitbtn" id="submitbtn" onclick="customTransfer()"/>
+            <input type="button"  value="Get custom token balance" class="balance" id="custombalance" onclick="getCustomBalance()"/>
+        
+         <!-- <p id="tx" onclick="copyToClipboard()" readonly="readonly"> </p> -->
+        <!-- <textarea id="tx" name="txnHash" rows="1" cols="120"> -->
+
+        <!-- </textarea> -->
+
+
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.2-rc.0/web3.min.js" 
+      integrity="sha512-REWiGZVmhU2S5eIov/DuNrsq4djWnPaAHSvXrbLLLaI0r/gW+wh1utIzxt0iB4IQLgXhNDj5mR0YMBjrkKhVMA==" 
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+      </script> -->
+  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.6.2/ethers.umd.min.js" integrity="sha512-VLIBlhfqpqbMD6ZAPx7uzfF9/WEfVBgbcIfw5i/9k3smQlVupb1yq2WFChUcefVCBdkGrDHywOfnlMAKmK5QZQ==" 
+      crossorigin="anonymous" 
+      referrerpolicy="no-referrer">
+      </script>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4/web3.min.js" integrity="sha512-oMd9Re3VgJcXuZJn9DN6X7S7JUc7xLYZ2UyZ85Mm/xzaW3lwBr4fV2zjuu/n5jY/Of/2JOx35CTa6zvQNxb31Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+    
+        
+    
+    <script src="index.js"> </script>
+
+</body>
+</html>
